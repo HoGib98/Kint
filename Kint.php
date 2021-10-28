@@ -31,9 +31,7 @@ use Kint\Parser\Plugin;
 use Kint\Renderer\Renderer;
 use Kint\Renderer\TextRenderer;
 use Kint\Zval\Value;
-use Kint\Utils;
-
-require_once __DIR__ . '/kint.phar';
+// use Kint\Utils;
 
 if (\defined('KINT_DIR')) {
     return;
@@ -767,7 +765,7 @@ class Kint
         return $return;
     }
 
-    public static function d($data){
+    public static function d($data){$data=[$data];
         if(is_null($data)){
             $str = "<i>NULL</i>";
         }elseif($data == ""){
@@ -798,11 +796,11 @@ class Kint
         return $str;
     }
     
-    public static function dnl($data){
+    public static function dnl($data){$data=[$data];
         echo self::d($data) . "<br>\n";
     }
     
-    public static function dd($data){
+    public static function dd($data){$data=[$data];
         echo self::dnl($data);
     }
     
